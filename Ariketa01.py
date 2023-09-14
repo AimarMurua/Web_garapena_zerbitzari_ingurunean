@@ -28,7 +28,16 @@ while True:
     aukera = input("Aukeratu zure aukera: ")
 
     if aukera == "1":
-        print("1")
+        izena = input("Sartu erabiltzailearen izena: ")
+        abizena = input("Sartu erabiltzailearen abizena: ")
+        sql = "INSERT INTO erabiltzaileak (izena, abizena) VALUES(%s, %s)"
+        try:
+            cursor.execute(sql, (izena, abizena))
+            conexion.commit()
+            print("Datuak ondo sartu dira")
+        except pymysql.Error as error:
+            print("Errorea datuak sartzerakoan", error)
+
     elif aukera == "2":
         cursor.execute("SELECT * FROM erabiltzaileak")
         emaitzak = cursor.fetchall()
@@ -37,9 +46,30 @@ while True:
             print(fila)
 
     elif aukera == "3":
-        print("2")
+        print("3")
+        
     elif aukera == "4":
-        print("4")
+        cursor.execute("SELECT * FROM erabiltzaileak")
+        emaitzak = cursor.fetchall()
+
+        for i, fila in enumerate(emaitzak, start=1):
+            print(f"{i}. {fila}")
+
+        try:
+            erabiltzailea_aukera = int(input("Ezabatu nahi duzun erabiltzailearen zenbakia: "))
+            if erabiltzailea_aukera >= 1 and erabiltzailea_aukera <= len(emaitzak):
+                erabiltzailea = emaitzak[erabiltzailea_aukera - 1]
+                erabiltzailea_id = erabiltzailea['izena']  # Replace 'id' with the actual column name for the unique identifier
+                delete_sql = "DELETE FROM erabiltzaileak WHERE izena = %s"
+                cursor.execute(delete_sql, (erabiltzailea_id,))
+                conexion.commit()
+                print("Erabiltzailea ondo ezabatu da")
+            else:
+                print("Aukera okerra")
+        except ValueError:
+            print("Zenbaki bat sartu behar duzu")
+
+
     elif aukera == "5":
         print("Programatik irtetzen...")
         break
