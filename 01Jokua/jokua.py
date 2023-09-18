@@ -13,6 +13,7 @@ pygame.display.set_caption("Juego de Tenis en Python")
 # Colores
 black = (0, 0, 0)
 white = (255, 255, 255)
+red = (255,0,0)
 
 # Jugadores
 player1_width, player1_height = 10, 100
@@ -84,7 +85,7 @@ while running:
     # Dibujar paletas y pelota
     pygame.draw.rect(screen, white, (player1_x, player1_y, player1_width, player1_height))
     pygame.draw.rect(screen, white, (player2_x, player2_y, player2_width, player2_height))
-    pygame.draw.ellipse(screen, white, (ball_x, ball_y, ball_width, ball_height))
+    pygame.draw.ellipse(screen, red, (ball_x, ball_y, ball_width, ball_height))
 
     # Dibujar puntuación
     text1 = font.render(f"Jugador 1: {score1}", True, white)
@@ -94,6 +95,9 @@ while running:
 
     # Actualizar la pantalla
     pygame.display.update()
+
+    if(score1 or score2 > 3):
+        sys.exit()
 
 # Salir del juego
 pygame.quit()
