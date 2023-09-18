@@ -46,22 +46,45 @@ while True:
             print(fila)
 
     elif aukera == "3":
-        print("3")
+        cursor.execute("SELECT * FROM erabiltzaileak")
+        emaitzak = cursor.fetchall()
+
+        for i, fila in enumerate(emaitzak, start=1):
+            print(f"{i}. {fila}")
+        
+        try:
+            erabiltzailea_aukera = int(input("Aldatu nahi duzun erabiltzailearen zenbakia: "))
+            if erabiltzailea_aukera >= 1 and erabiltzailea_aukera <= len(emaitzak):
+                erabiltzailea = emaitzak[erabiltzailea_aukera - 1]
+                erabiltzailea_id = str(erabiltzailea).split("'")
+                print(f"Aldatu nahi duzun erabiltzailea: {erabiltzailea[0]} {erabiltzailea[1]}")
+                izen_berria = input("Sartu erabiltzailearen izen berria: ")
+                abizen_berria = input("Sartu erabiltzailearen abizen berria: ")
+                
+                update_sql = "UPDATE erabiltzaileak SET Izena = %s, Abizena = %s WHERE Izena = %s"
+                cursor.execute(update_sql, (izen_berria, abizen_berria, erabiltzailea[0]))
+                conexion.commit()
+                print("Erabiltzailea ondo aldatu da")
+            else:
+                print("Aukera okerra")
+        except ValueError:
+            print("Zenbaki bat sartu behar duzu")
+            
         
     elif aukera == "4":
         cursor.execute("SELECT * FROM erabiltzaileak")
         emaitzak = cursor.fetchall()
 
-        for i, fila in enumerate(emaitzak, start=1):
+        for i, fila in enumerate(emaitzak, start = 1):
             print(f"{i}. {fila}")
 
         try:
             erabiltzailea_aukera = int(input("Ezabatu nahi duzun erabiltzailearen zenbakia: "))
             if erabiltzailea_aukera >= 1 and erabiltzailea_aukera <= len(emaitzak):
                 erabiltzailea = emaitzak[erabiltzailea_aukera - 1]
-                erabiltzailea_id = erabiltzailea['izena']  # Replace 'id' with the actual column name for the unique identifier
+                erabiltzailea_id = str(erabiltzailea).split("'")
                 delete_sql = "DELETE FROM erabiltzaileak WHERE izena = %s"
-                cursor.execute(delete_sql, (erabiltzailea_id,))
+                cursor.execute(delete_sql, (erabiltzailea_id[1],))
                 conexion.commit()
                 print("Erabiltzailea ondo ezabatu da")
             else:
