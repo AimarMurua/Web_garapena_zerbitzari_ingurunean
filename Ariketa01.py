@@ -80,6 +80,7 @@ while True:
 
         try:
             erabiltzailea_aukera = int(input("Ezabatu nahi duzun erabiltzailearen zenbakia: "))
+            
             if erabiltzailea_aukera >= 1 and erabiltzailea_aukera <= len(emaitzak):
                 erabiltzailea = emaitzak[erabiltzailea_aukera - 1]
                 erabiltzailea_id = str(erabiltzailea).split("'")
