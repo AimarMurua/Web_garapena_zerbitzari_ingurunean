@@ -6,7 +6,7 @@ from django.urls import reverse
 # Create your views here.
 def index(request):
     postak = Post.objects.all
-    return render(request, 'index.html', {'posta':postak})
+    return render(request, 'index.html', {'posta':postak}) #ezkerrekoa htmlra pasatzen den aldagaia da
 
 def add(request):
     return render(request, 'add.html')

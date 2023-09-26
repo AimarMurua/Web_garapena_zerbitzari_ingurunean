@@ -1,17 +1,5 @@
-{%load static%}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NIRE Django BLOG</title>
-    <link rel="stylesheet" href='{%static "css/blog.css" %}'>
-</head>
-<body>
-    <center><h1>Post bat eguneratzeko ondorengo formularioa aldatu</h1>
-    <br><br><br>
+{% extends 'base.html' %}
+{% block content %}
 
     <form action="/eguneratu/{{posta.id}}" method="POST">
         {% csrf_token %}
@@ -19,7 +7,5 @@
         Post-aren edukia: <input type="text" name="edukia" value="{{posta.edukia}}"><br><br>
         <button type="submit" value="Submit">Eguneratu</button>
     </form>
-</center>
 
-</body>
-</html>
+{% endblock content %}
