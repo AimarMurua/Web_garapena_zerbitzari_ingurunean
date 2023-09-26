@@ -8,24 +8,34 @@
     <link rel="stylesheet" href='{%static "style.css"%}'>
 </head>
 <body>
-    <h1>proba</h1>
+    <center><h1>Bideojoku Alokairua</h1></center>
+    <div class="gehitubotoia">
+        <center><a id="gehitubotoia" href="add/">Gehitu bideojoku bat</a></center>
+    </div>
+    <br>
     <table>
         {%for bideojokua in bideojokua%} <!-- bideojokua viewsetik hartezn den aldagaia da -->
         <tr>
             <td>
                 <div>
-                    <p>{{bideojokua.id}}</p>
-                    <p>{{bideojokua.bid_id}}</p>
+                    <p class="ida">{{bideojokua.id}}</p>
+                    <p class="ida">{{bideojokua.bid_id}}</p>
                     <p><h2>{{bideojokua.bid_izena}}</h2></p>
                     <p>{{bidojokua.bid_generoa}}</p>
                     <p>{{bideojokua.bid_hizkuntza}}</p>
                     <p>{{bideojokua.bid_irteeradata}}</p>
                     <p>{{bideojokua.bid_adinminimoa}}</p>
                     <p>{{bideojokua.bid_sinopsia}}</p>
+                    <div id="ezabatubotoia">
+                        <p><a class="ezabatu" href="">Ezabatu</a></p>
+                    </div>
+                    <br>
                 </div>
             </td>
         </tr>
         {%endfor%}
     </table>
+    <br>
+    
 </body>
 </html>
