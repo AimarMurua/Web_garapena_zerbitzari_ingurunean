@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block content%}
+    <form action="addpost/" method="POST">
+        {%csrf_token%}
+        <label for="bid_id">Bideojokuaren id-a: </label>
+        <input type="text" name="bid_id"><br><br>
+
+        <label for="bid_izena">Bideojokuaren izena: </label>
+        <input type="text" name="bid_izena"><br><br>
+
+        <label for="bid_generoa">Bideojokuaren generoa: </label>
+        <input type="text" name="bid_generoa"><br><br>
+
+        <label for="bid_hizkuntza">Bideojokuaren hizkuntza: </label>
+        <input type="text" name="bid_hizkuntza"><br><br>
+
+        <label for="bid_irteeradata">Bideojokuaren irteera data: </label>
+        <input type="date" name="bid_irteeradata"><br><br>
+
+        <label for="bid_adinminimoa">Bideojokuaren adin minimoa: </label>
+        <input type="text" name="bid_adinminimoa"><br><br>
+
+        <label for="bid_sinopsia">Bideojokuaren sinopsia: </label><br>
+        <textarea name="bid_sinopsia" id="" cols="50" rows="10"></textarea><br><br><br>
+
+        <center><button type="submit" value="Submit">Post-a sortu</button>
+        <button type="reset" value="reset">Ezabatu</button>
+        </center>
+    </form>
+{%endblock content%}

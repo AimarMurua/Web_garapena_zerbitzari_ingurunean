@@ -1,16 +1,10 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJANGO Bideojoku Denda</title>
-    <link rel="stylesheet" href='{%static "style.css"%}'>
-</head>
-<body>
-    <center><h1>Bideojoku Alokairua</h1></center>
+{%extends 'base.html'%}
+{%block content%}
     <div class="gehitubotoia">
         <center><a id="gehitubotoia" href="add/">Gehitu bideojoku bat</a></center>
+    </div><br>
+    <div class="gehitubotoia">
+        <center><a id="gehitubotoia" href="add/">Gehitu bezero bat</a></center>
     </div>
     <br>
     <table>
@@ -20,12 +14,13 @@
                 <div>
                     <p class="ida">{{bideojokua.id}}</p>
                     <p class="ida">{{bideojokua.bid_id}}</p>
-                    <p><h2>{{bideojokua.bid_izena}}</h2></p>
-                    <p>{{bidojokua.bid_generoa}}</p>
-                    <p>{{bideojokua.bid_hizkuntza}}</p>
-                    <p>{{bideojokua.bid_irteeradata}}</p>
-                    <p>{{bideojokua.bid_adinminimoa}}</p>
-                    <p>{{bideojokua.bid_sinopsia}}</p>
+                    <p><h2><center>{{bideojokua.bid_izena}}</center></h2></p>
+                    <hr class="small-hr">
+                    <p><b>Generoa: </b>{{bideojokua.bid_generoa}}</p>
+                    <p><b>Hizkuntza: </b>{{bideojokua.bid_hizkuntza}}</p>
+                    <p><b>Irteera data: </b>{{bideojokua.bid_irteeradata}}</p>
+                    <p><b>Adin minimoa: </b>{{bideojokua.bid_adinminimoa}}</p>
+                    <p><b>Sinopsia: </b>{{bideojokua.bid_sinopsia}}</p>
                     <div id="ezabatubotoia">
                         <p><a class="ezabatu" href="">Ezabatu</a></p>
                     </div>
@@ -35,7 +30,4 @@
         </tr>
         {%endfor%}
     </table>
-    <br>
-    
-</body>
-</html>
+{%endblock content%}

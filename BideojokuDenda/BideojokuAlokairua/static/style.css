@@ -28,7 +28,7 @@ body {
 
 .gehitubotoia {
     padding: 20px;
-    background-color: rgb(0, 128, 0);
+    background-color: rgb(3, 167, 3);
     border-radius: 14px;
     text-align: center;
     margin: auto;
@@ -51,4 +51,16 @@ body {
     text-decoration: none;
     color: white;
     width: 10%;
+}
+
+#footer {
+    background-color: greenyellow;
+}
+
+.small-hr {
+    height: 0.5px; /* Adjust the height as needed */
+    width: 90%;
+    border: none;
+    background-color:rgb(0, 0, 0); /* Change the color if desired */
+    opacity: 0.3;
 }
