@@ -1,16 +1,20 @@
 {%extends 'base.html'%}
 {%block content%}
+    <center><h2>Bideojokuak</h2>
     <div class="gehitubotoia">
         <center><a id="gehitubotoia" href="add/">Gehitu bideojoku bat</a></center>
     </div><br>
     <div class="gehitubotoia">
-        <center><a id="gehitubotoia" href="add/">Gehitu bezero bat</a></center>
+        <center><a id="gehitubotoia" href="bezeroak/">Bezeroak ikusi</a></center>
     </div>
     <br>
     <table>
         {%for bideojokua in bideojokua%} <!-- bideojokua viewsetik hartezn den aldagaia da -->
         <tr>
             <td>
+                <div id="eguneratu" style="text-align: right;">
+                    <a style="text-decoration: none; color: black;" href="eguneratubidform/{{bideojoku.id}}">Eguneratu</a>
+                </div>
                 <div>
                     <p class="ida">{{bideojokua.id}}</p>
                     <p class="ida">{{bideojokua.bid_id}}</p>
@@ -22,7 +26,7 @@
                     <p><b>Adin minimoa: </b>{{bideojokua.bid_adinminimoa}}</p>
                     <p><b>Sinopsia: </b>{{bideojokua.bid_sinopsia}}</p>
                     <div id="ezabatubotoia">
-                        <p><a class="ezabatu" href="">Ezabatu</a></p>
+                        <p><a class="ezabatu" href="ezabatubideojokua/{{bideojokua.id}}">Ezabatu</a></p>
                     </div>
                     <br>
                 </div>

@@ -1,6 +1,6 @@
 {%extends 'base.html'%}
 {%block content%}
-    <form action="addpost/" method="POST">
+    <form action="addbid/" method="POST">
         {%csrf_token%}
         <label for="bid_id">Bideojokuaren id-a: </label>
         <input type="text" name="bid_id"><br><br>
@@ -23,7 +23,7 @@
         <label for="bid_sinopsia">Bideojokuaren sinopsia: </label><br>
         <textarea name="bid_sinopsia" id="" cols="50" rows="10"></textarea><br><br><br>
 
-        <center><button type="submit" value="Submit">Post-a sortu</button>
+        <center><button type="submit" value="Submit">Bideojokua erregistratu</button>
         <button type="reset" value="reset">Ezabatu</button>
         </center>
     </form>

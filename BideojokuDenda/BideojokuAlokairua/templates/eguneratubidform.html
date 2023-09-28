@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <form action="/eguneratubid/{{bideojokua.id}}" method="POST">
+        {% csrf_token %}
+        <label for="bid_id">Bideojokuaren id-a: </label>
+        <input type="text" name="bid_id" value="{{bideojokua.bid_id}}"><br><br>
+
+        <label for="bid_izena">Bideojokuaren izena: </label>
+        <input type="text" name="bid_izena" value="{{bideojokua.bid_izena}}"><br><br>
+
+        <label for="bid_generoa">Bideojokuaren generoa: </label>
+        <input type="text" name="bid_generoa" value="{{bideojokua.bid_generoa}}"><br><br>
+
+        <label for="bid_hizkuntza">Bideojokuaren hizkuntza: </label>
+        <input type="text" name="bid_hizkuntza" value="{{bideojokua.bid_hizkuntza}}"><br><br>
+
+        <label for="bid_irteeradata">Bideojokuaren irteera data: </label>
+        <input type="date" name="bid_irteeradata" value="{{bideojokua.bid_irteeradata}}"><br><br>
+
+        <label for="bid_adinminimoa">Bideojokuaren adin minimoa: </label>
+        <input type="text" name="bid_adinminimoa" value="{{bideojokua.bid_adinminimoa}}"><br><br>
+
+        <label for="bid_sinopsia">Bideojokuaren sinopsia: </label><br>
+        <textarea name="bid_sinopsia" id="" cols="50" rows="10" value="{{bidoejokua.bid_sinopsia}}"></textarea><br><br><br><br><br>
+        <button type="submit" value="Submit">Eguneratu</button>
+    </form>
+
+{% endblock content %}

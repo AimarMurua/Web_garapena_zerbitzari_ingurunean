@@ -1,6 +1,28 @@
 {%extends 'base.html'%}
 {%block content%}
-    <form action="addpost/" method="POST">
+    <form action="/add/addbezero/" method="POST">
+        {%csrf_token%}
+        <label for="bez_dni">Bezeroaren DNIa: </label>
+        <input type="text" name="bez_dni"><br><br>
 
+        <label for="bez_izena">Bezeroaren izena: </label>
+        <input type="text" name="bez_izena"><br><br>
+
+        <label for="bez_abizena">Bezeroaren abizena: </label>
+        <input type="text" name="bez_abizena"><br><br>
+
+        <label for="bez_telefonoa">Bezeroaren telefonoa: </label>
+        <input type="text" name="bez_telefonoa"><br><br>
+
+        <label for="bez_email">Bezeroaren emaila: </label>
+        <input type="date" name="bez_email"><br><br>
+
+        <label for="bez_helbidea">Bezeroaren helbidea: </label>
+        <input type="text" name="bez_helbidea"><br><br>
+        <br><br><br>
+
+        <center><button type="submit" value="Submit">Bezeroa erregistratu</button>
+        <button type="reset" value="reset">Ezabatu</button>
+        </center>
     </form>
 {%endblock content%}
