@@ -11,6 +11,7 @@ class Bideojokua(models.Model):
     bid_adinminimoa = models.IntegerField()
     bid_sinopsia = models.CharField(max_length=250)
 
+
     def __unicode__(self):
         return self.bid_izena
     
@@ -24,3 +25,8 @@ class Bezeroa(models.Model):
     
     def __unicode__(self):
         return self.bez_izena + " " + self.bez_abizena
+
+class Alokairua(models.Model):
+    bezeroa = models.ForeignKey(Bezeroa, on_delete=models.CASCADE)
+    bideojokua = models.ForeignKey(Bideojokua, on_delete=models.CASCADE)
+    

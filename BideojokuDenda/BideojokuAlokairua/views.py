@@ -94,3 +94,26 @@ def eguneratubid(request, id):
     eguneratzekobid.save()
 
     return HttpResponseRedirect(reverse('index'))
+
+def eguneratubezform(request, id):
+    eguneratzekobezeroa = Bezeroa.objects.get(id = id)
+    return render(request, 'eguneratubezform.html', {'bezeroa':eguneratzekobezeroa})
+
+def eguneratubez(request, id): 
+    eguneratzekobez = Bezeroa.objects.get(id = id)
+
+    bez_dni = request.POST["bez_dni"]
+    bez_izena = request.POST["bez_izena"]
+    bez_abizena = request.POST["bez_abizena"]
+    bez_telefonoa = request.POST["bez_telefonoa"]
+    bez_email = request.POST["bez_email"]
+    bez_helbidea = request.POST["bez_helbidea"]
+
+    eguneratzekobez.bez_dni = bez_dni
+    eguneratzekobez.bez_izena = bez_izena
+    eguneratzekobez.bez_abizena = bez_abizena
+    eguneratzekobez.bez_telefonoa = bez_telefonoa
+    eguneratzekobez.bez_email = bez_email
+    eguneratzekobez.bez_helbidea = bez_helbidea
+
+    return HttpResponseRedirect(reverse('bezeroak'))

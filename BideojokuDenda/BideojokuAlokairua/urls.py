@@ -16,4 +16,7 @@ urlpatterns = [
 
     path('eguneratubidform/<int:id>', views.eguneratubidform, name = 'eguneratubidform'),
     path('eguneratubid/<int:id>', views.eguneratubid, name = 'eguneratubid'),
+
+    path('eguneratubezform/<int:id>', views.eguneratubezform, name = 'eguneratubezform'), 
+    path('eguneratubez/<int:id>', views.eguneratubez, name = 'eguneratubez')
 ]   
