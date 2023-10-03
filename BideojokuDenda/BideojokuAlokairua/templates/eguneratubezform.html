@@ -3,25 +3,22 @@
 
     <form action="/eguneratubez/{{bezeroa.id}}" method="POST">
         {% csrf_token %}
-        <label for="bid_id">Bezeroaren id-a: </label>
-        <input type="text" name="bez_id" value="{{bezeroa.bez_id}}"><br><br>
-
-        <label for="bid_izena">Bezeroaren dni-a: </label>
+        <label for="bez_dni">Bezeroaren dni-a: </label>
         <input type="text" name="bez_dni" value="{{bezeroa.bez_dni}}"><br><br>
 
-        <label for="bid_generoa">Bezeroaren izena: </label>
+        <label for="bez_izena">Bezeroaren izena: </label>
         <input type="text" name="bez_izena" value="{{bezeroa.bez_izena}}"><br><br>
 
-        <label for="bid_hizkuntza">Bezeroaren abizena </label>
+        <label for="bez_abizena">Bezeroaren abizena </label>
         <input type="text" name="bez_abizena" value="{{bezeroa.bez_abizena}}"><br><br>
 
-        <label for="bid_irteeradata">Bezeroaren telefonoa: </label>
-        <input type="date" name="bez_telefonoa" value="{{bezeroa.bez_telefonoa}}"><br><br>
+        <label for="bez_telefonoa">Bezeroaren telefonoa: </label>
+        <input type="text" name="bez_telefonoa" value="{{bezeroa.bez_telefonoa}}"><br><br>
 
-        <label for="bid_adinminimoa">Bezeroaren emaila: </label>
-        <input type="text" name="bez_email" value="bezeroa.bez_email"><br><br>
+        <label for="bez_email">Bezeroaren emaila: </label>
+        <input type="text" name="bez_email" value="{{bezeroa.bez_email}}"><br><br>
 
-        <label for="bid_adinminimoa">Bezeroaren helbidea: </label>
+        <label for="bez_helbidea">Bezeroaren helbidea: </label>
         <input type="text" name="bez_helbidea" value="{{bezeroa.bez_helbidea}}"><br><br><br><br>
 
 
