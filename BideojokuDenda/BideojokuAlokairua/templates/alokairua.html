@@ -1,32 +1,27 @@
 {%extends 'base.html'%}
 {%block content%}
-    <center><h2>Bezeroak</h2></center>
+    <center><h2>Alokairuak</h2></center>
     <div class="gehitubotoia">
         <center><a id="gehitubotoia" href="/">Bideojokuak ikusi</a></center>
     </div><br>
     <div class="gehitubotoia">
-        <center><a id="gehitubotoia" href="/add/addbez">Gehitu bezero bat</a></center>
+        <center><a id="gehitubotoia" href="/bezeroak">Bezeroak ikusi</a></center>
     </div>
     <br>
     <div class="gehitubotoia">
-        <center><a id="gehitubotoia" href="/alokairuak">Alokairuak ikusi</a></center>
+        <center><a id="gehitubotoia" href="/alokairuak/addalo">Alokairua sartu</a></center>
     </div>
     <br>
     <center><table style="width: 100%;">
-        {%for bezeroa in bezeroa%} <!-- bideojokua viewsetik hartezn den aldagaia da -->
+        {%for alokairua in alokairuak%} <!-- alokairua viewsetik hartezn den aldagaia da -->
         <tr>
             <td>
                 <div id="eguneratu" style="text-align: right;">
                     <a style="text-decoration: none; color: black;" href="eguneratubezform/{{bezeroa.id}}">Eguneratu</a>
                 </div>
                 <div>
-                    <p class="ida">{{bezeroa.id}}</p>
-                    <center><p class="ida"><b>DNI: </b>{{bezeroa.bez_dni}}</p></center>
-                    <p><b>Izena: </b>{{bezeroa.bez_izena}}</p>
-                    <p><b>Abizena: </b>{{bezeroa.bez_abizena}}</p>
-                    <p><b>Telefonoa: </b>{{bezeroa.bez_telefonoa}}</p>
-                    <p><b>Email:  </b>{{bezeroa.bez_email}}</p>
-                    <p><b>Helbidea: </b>{{bezeroa.bez_helbidea}}</p>
+                    <p><b>Bezeroa: </b>{{alokairua.bezeroa}}</p>
+                    <p><b>Bideojokua: </b>{{alokairua.bideojokua}}</p>
                     <div id="ezabatubotoia">
                         <p><a class="ezabatu" href="ezabatubezeroa/{{bezeroa.id}}">Ezabatu</a></p>
                     </div>

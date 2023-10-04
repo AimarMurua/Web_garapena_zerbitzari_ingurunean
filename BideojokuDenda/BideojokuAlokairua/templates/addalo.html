@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%block content%}
+    <form action="addaloform/" method="POST">
+        {%csrf_token%}
+        <label for="bid_id">Bezeroa: </label>
+        <select name="bezeroa" required>
+            {%for bezeroa in bezeroak%}
+                <option>{{bezeroa.bez_izena}}</option>
+            {%endfor%}
+        </select>
+        <br><br>
+
+        <label>Bideojokua: </label>
+        <select name = 'bideojokua' required>
+            {%for bideojokua in bideojokuak%}
+                <option>{{bideojokua.bid_izena}}</option>
+            {%endfor%}
+        </select><br><br>
+
+        <center><button type="submit" value="Submit">Alokairua sartu</button>
+        </center>
+    </form>
+{%endblock content%}

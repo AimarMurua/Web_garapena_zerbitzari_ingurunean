@@ -24,7 +24,7 @@ class Bezeroa(models.Model):
     bez_helbidea = models.CharField(max_length=60)
     
     def __unicode__(self):
-        return self.bez_izena + " " + self.bez_abizena
+        return self.bez_izena
 
 class Alokairua(models.Model):
     bezeroa = models.ForeignKey(Bezeroa, on_delete=models.CASCADE)

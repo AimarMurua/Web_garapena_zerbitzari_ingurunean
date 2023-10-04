@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Bideojokua
 from .models import Bezeroa
+from .models import Alokairua
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -117,3 +118,23 @@ def eguneratubez(request, id):
     eguneratzekobez.bez_helbidea = bez_helbidea
 
     return HttpResponseRedirect(reverse('bezeroak'))
+
+def alokairua(request):
+    alokairua = Alokairua.objects.all
+    return render(request, 'alokairua.html', {'alokairua':alokairua})
+
+def addalo(request):
+    bideojokuak = Bideojokua.objects.all
+    bezeroak = Bezeroa.objects.all
+    return render(request, 'addalo.html', {'bideojokua':bideojokuak, 'bezeroa':bezeroak})
+
+def addaloform(request):
+    bideojokuak = request.POST['bideojokua']
+    bideojokuaEgina = Bideojokua.objects.get(bid_izena = bideojokuak)
+
+    bezeroa = request.POST['bezeroa']
+    bezeroaEgina = Bezeroa.objects.get(bez_izena = bezeroa)
+
+    alokairua = Alokairua(bezeroa = bezeroaEgina, bideojokua = bideojokuaEgina)
+    alokairua.save()
+    return HttpResponseRedirect(reverse('alokairua'))

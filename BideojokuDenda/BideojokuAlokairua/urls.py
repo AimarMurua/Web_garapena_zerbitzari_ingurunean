@@ -18,5 +18,10 @@ urlpatterns = [
     path('eguneratubid/<int:id>', views.eguneratubid, name = 'eguneratubid'),
 
     path('bezeroak/eguneratubezform/<int:id>', views.eguneratubezform, name = 'eguneratubezform'), 
-    path('eguneratubez/<int:id>', views.eguneratubez, name = 'eguneratubez')
+    path('eguneratubez/<int:id>', views.eguneratubez, name = 'eguneratubez'),
+
+    path('alokairuak/', views.alokairua, name = 'alokairua'),
+    path('alokairuak/addalo/', views.addalo, name = 'addalo'), 
+
+    path('alokairuak/addalo/addaloform/', views.addaloform, name = 'addaloform')
 ]   
