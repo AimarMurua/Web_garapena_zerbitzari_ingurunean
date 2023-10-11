@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gehitu Bezeroa</title>
+</head>
+<body>
+    <h2>gehitu bezeroa</h2>
+    <form action="gehitubezeroa/" method="POST">
+        {%csrf_token%}
+        <label for="">dni: </label>
+        <input type="text" name="dni" required><br><br>
+
+        <label for="">izena: </label>
+        <input type="text" name="izena" required><br><br>
+
+        <label for="">abizena: </label>
+        <input type="text" name="abizena" required><br><br>
+
+        <input type="submit" value="gehitu">
+    </form>
+</body>
+</html>

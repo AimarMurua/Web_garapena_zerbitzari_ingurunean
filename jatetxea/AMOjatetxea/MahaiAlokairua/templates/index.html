@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMO</title>
+</head>
+<body>
+    <h1>bezeroak</h1>
+    <a href="gehitu/" style="text-decoration: none; color: green;"><b>+</b></a><br><br>
+    <table border="1">
+        {%for bezeroak in bezeroak%}
+        <tr>
+            <td>
+                <!-- bezeroak.dni ezabatun foreko bezeroak ekin doa -->
+                <a href="ezabatubezeroa/{{bezeroak.dni}}" style="text-decoration: none; color: red; margin-left: 90%;">x</a>
+                <a href="" style="text-decoration: none; color: orange; margin-left: 90%;">=</a>
+                <p><b>dni: </b>{{bezeroak.dni}}</p>
+                <p><b>izena: </b>{{bezeroak.izena}}</p>
+                <p><b>abizena: </b>{{bezeroak.abizena}}</p>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>
