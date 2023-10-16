@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMO</title>
+</head>
+<body>
+    <h1>alokairuak</h1>
+    <table border="1">
+        <a href="/" style="text-decoration: none; color: purple;">/===</a>
+        <a href="gehitualokairua/" style="text-decoration: none; color: green;">+a</a>
+        {%for alokairua in alokairua%}
+        <tr>
+            <td>
+                <p><b>mahai zenbakia: </b>{{alokairua.mahai_zenbakia}}</p>
+                <p><b>bezeroaren dni: </b>{{alokairua.bezero_dni}}</p>
+                <p><b>alokairu data: </b>{{alokairua.alokairu_data}}</p>
+                <p><b>alokairu ordua: </b>{{alokairua.alokairu_ordua}}</p>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>

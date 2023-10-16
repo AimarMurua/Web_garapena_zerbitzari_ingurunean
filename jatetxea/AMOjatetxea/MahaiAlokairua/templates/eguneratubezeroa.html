@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMO</title>
+</head>
+<body>
+    <h1>eguneratu bezeroa</h1>
+    <form action="eguneratubezeroaerregistroa/{{bezeroa.dni}}" method="POST">
+        {%csrf_token%}
+        <label>dni: </label>
+        <input type="text" name="dni" value="{{bezeroa.dni}}"></input><br><br>
+
+        <label>izena:</labes>
+        <input type="text" name="izena" value="{{bezeroa.izena}}"></input><br><br>
+
+        <label>abizena:</labes>
+        <input type="text" name="abizena" value="{{bezeroa.abizena}}"></input><br><br>
+
+        <input type="submit" value="submit"></input>
+    </form>
+
+</body>
+</html>

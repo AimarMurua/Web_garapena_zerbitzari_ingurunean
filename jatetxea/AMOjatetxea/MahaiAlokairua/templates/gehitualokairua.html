@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMO</title>
+</head>
+<body>
+    <h1>gehitu alokairua</h1>
+    <a href="/alokairua/" style="text-decoration: none; color: pink;"><b>A</b></a><br><br>
+    <form action="gehitualokairuaerregistroa/" method="POST">
+        {% csrf_token %} 
+        <label class="form-label">bezeroa: </label>
+        <select name="bezero_dni" class="form-control" required>
+          {% for bezeroa in bezeroa %}
+              <option> {{bezeroa.izena}}</option>
+          {% endfor %}
+        </select>
+        <br><br>
+        <label class="form-label">mahaia: </label>
+        <select name="mahai_zenbakia" class="form-control" required>
+          {% for mahaia in mahaia %}
+              <option> {{mahaia.zenbakia}}</option>
+          {% endfor %}
+        </select>
+
+        <label class="form-label">alokairu data data:</label>
+        <input class="form-control" type="date" name="alokairu_data" required/><br><br>
+
+        <label class="form-label">alokairu ordua:</label>
+        <input class="form-control" type="text" name="alokairu_ordua" required/>
+
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

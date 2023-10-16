@@ -8,13 +8,14 @@
 <body>
     <h1>bezeroak</h1>
     <a href="gehitu/" style="text-decoration: none; color: green;"><b>+</b></a><br><br>
+    <a href="alokairua/" style="text-decoration: none; color: pink;"><b>A</b></a><br><br>
     <table border="1">
         {%for bezeroak in bezeroak%}
         <tr>
             <td>
                 <!-- bezeroak.dni ezabatun foreko bezeroak ekin doa -->
                 <a href="ezabatubezeroa/{{bezeroak.dni}}" style="text-decoration: none; color: red; margin-left: 90%;">x</a>
-                <a href="" style="text-decoration: none; color: orange; margin-left: 90%;">=</a>
+                <a href="eguneratubezeroa/{{bezeroak.dni}}" style="text-decoration: none; color: orange; margin-left: 90%;">=</a>
                 <p><b>dni: </b>{{bezeroak.dni}}</p>
                 <p><b>izena: </b>{{bezeroak.izena}}</p>
                 <p><b>abizena: </b>{{bezeroak.abizena}}</p>
